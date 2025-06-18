@@ -1,10 +1,10 @@
-# 🤖 EMG-Based Multi-Hand Gesture Classification for Prosthetic Control
+# EMG-Based Multi-Hand Gesture Classification for Prosthetic Control
 
-## ✨ Abstract
+## Abstract
 
 Many individuals suffer from the loss of limb function due to arm amputations or congenital musculoskeletal disorders. Myoelectric prostheses provide a promising avenue for restoring hand functionality, enabling more natural interaction through muscle signals. This project focuses on building a machine learning system to classify hand gestures from surface EMG (sEMG) data collected via the MYO Thalmic armband.
 
-## 🌐 Project Objectives
+## Project Objectives
 
 * Develop a real-time limb prosthesis control model using myoelectric signals.
 * Extract robust time- and frequency-domain features (sFE1, sFE2).
@@ -12,7 +12,7 @@ Many individuals suffer from the loss of limb function due to arm amputations or
 * Evaluate using Leave-One-Subject-Out cross-validation.
 * Lay the groundwork for future deployment on real robotic hands (Inmoov).
 
-## 🎓 Dataset Overview
+## Dataset Overview
 
 * Source: Kaggle (CC BY 4.0 License)
 * Subjects: 36 individuals
@@ -21,7 +21,7 @@ Many individuals suffer from the loss of limb function due to arm amputations or
 * Gestures: 6 static gestures (Palm, Fist, Flexion, Extension, Radial/Ulnar Deviations)
 * Each gesture lasted 3 seconds, followed by a 3-second pause
 
-## ⚖️ Feature Extraction
+## Feature Extraction
 
 * Raw data filtered with FIR bandpass filter (1–400 Hz, order=100)
 * Extracted 18 features per channel (144 total) including:
@@ -30,7 +30,7 @@ Many individuals suffer from the loss of limb function due to arm amputations or
   * Frequency: MeanFreq, MedianFreq, Band Power, Peak Amp, Peak Loc
 
 
-## 📊 Results & Discussion
+## Results & Discussion
 
 This project evaluated multiple classifiers across **four different feature extraction/classification strategies**. The overall accuracies for KNN, SVM, and Random Forest (Bagging) are presented below:
 
@@ -48,13 +48,13 @@ This project evaluated multiple classifiers across **four different feature extr
 * The **1st method** already yielded strong results with ensemble models (Bagging = 88.89%) without advanced selection methods.
 * **SVM and KNN** consistently provided competitive performance but lagged behind ensemble techniques.
 
-### 🧠 Interpretation:
+### Interpretation:
 
 * **Ensemble techniques**, particularly Random Forest, consistently outperformed individual models due to improved generalization and robustness.
 * **Feature selection and system design** (e.g., Lasso, two-stage architecture) played a critical role in boosting classification performance.
 * **KNN** responded well to optimized configurations, especially in the final two methods, suggesting it is viable for simpler deployments.
 
-## ⚖️ Methods Overview
+## Methods Overview
 
 1. **Filtering**: FIR bandpass filter on all 8 EMG channels
 2. **Segmentation**: 100-sample sliding windows per gesture
@@ -63,20 +63,20 @@ This project evaluated multiple classifiers across **four different feature extr
 5. **Modeling**: Trained and tested 6 classifiers
 6. **Evaluation**: Accuracy, confusion matrix per model
 
-## 🏁 Key Outcomes
+## Key Outcomes
 
 * Achieved robust multi-class classification of EMG-based gestures
 * Demonstrated that ensemble models improve generalization
 * Created a structured pipeline that can be migrated to real-time control
 
-## 🚀 Future Work
+## Future Work
 
 * Implement advanced deep learning models (e.g., FTDLSTM, LSTM)
 * Transition from MATLAB to Python-based deployment
 * Integrate with real robotic hands (e.g., Inmoov)
 * Optimize models for embedded, low-power use
 
-## 🏢 Tools and Libraries
+## Tools and Libraries
 
 * Data Collection: MYO Thalmic Armband
 * Signal Processing: FIR Filter, FFT
