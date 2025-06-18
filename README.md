@@ -87,10 +87,7 @@ This project evaluated multiple classifiers across **four different feature extr
 
 ```
 classification-multi-hand-gesture-using-emg/
-├── data/
-│   ├── 01/, ..., 36/         # Raw subject folders
-│   ├── filtered_EMG_dataset.csv
-│   └── featured_EMG_dataset.csv
+
 ├── src/
 │   ├── preprocessing.py      # Filtering and cleaning
 │   ├── features.py           # Feature extraction
@@ -99,9 +96,7 @@ classification-multi-hand-gesture-using-emg/
 ├── main.py                  # Pipeline entry point
 ├── requirements.txt
 ├── README.md
-└── docs/
-    └── notes.md             # Methodology logs & ideas
-```
+
 
 ## ⚖️ Citation
 
